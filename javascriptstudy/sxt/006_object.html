@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//模拟java里的map
+		//var obj = new Object();
+		function Map(){
+			var obj = {};//空的对象容器
+			//put 方法
+			this.put = function(key,value){
+				obj[key] = value;
+			}
+			this.size = function(){
+				var count = 0;
+				for(var att in obj){
+					count++
+				}
+				return count;
+			}
+			this.get = function(key){
+				if(obj[key]||obj[key]===0||obj[key]===false){//注意value的0 false问题
+					return obj[key];
+				}else{
+					return null;
+				}
+				
+			}
+			this.remove = function(key){
+				if(obj[key]||obj[key]===0||obj[key]===false){
+					delete obj[key];
+				}
+				
+			}
+
+			this.eachMap = function(fn){
+				for(var att in obj){
+					fn(att,obj[attr])
+				}
+			}
+		}
+
+		
+		
+	</script>
+</body>
+</html>

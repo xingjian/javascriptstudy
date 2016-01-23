@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//3种方式定义函数
+	function test1 (argument) {
+		alert('wo shi test1');
+	}
+	//直接量 ECMAScript推荐
+	var test2 = function(){
+		alert('wo shi  test2');
+	}
+	//构造函数式
+	var test3 = new Function("a","b","return a+b");
+	test3(10,20);
+
+	//效率问题
+	var d1 = new Date();
+	var t1 = d1.getTime();
+	for(var i=0;i<10000;i++){
+		//function test1(){;} 11毫秒 只编译一次
+		//var test2 = new Function();1405毫秒 每次都编译
+	}
+	var d2 = new Date();
+	var t2 = d2.getTime();
+	alert(t2-t1);
+	//解析顺序问题 对于function语句函数优先解释
+	//先加载function 在声明变量，在赋值
+	test1();
+	function test1(){}//正常
+	test2();//test2 未定义 表示声明了，未定义
+	var test2 = function(){}
+
+	// 4 2 3 3 5 6
+	function f(){return 1;}
+	alert(f());//4 说明第一个函数被第四个函数覆盖了，内存里面覆盖，没有重载，
+	var f = new Function("return 2");
+	alert(f());//2 说明第四个函数被第二个函数覆盖
+	var f = new function(){return 3};
+	alert(f());//3 说明第二个函数把第三个函数覆盖
+	function f(){return 4;}
+	alert(f());//3 第四个函数被第三个函数覆盖
+	var f = new Function("return 5");
+	alert(f());// 5 第三个函数被第五个函数覆盖
+	var f = function(){return 6;}
+	alert(f());//6 说明第五个函数被第六个覆盖
+
+	//函数作用域
+	var k =1;
+	function t1(){
+		var k =2;
+		function test(){return k;}//2 函数作用域
+		var test = function(){return k}//2 函数作用域
+		var test = new Function('return k;');//1 相当在外面定义了一个函数，顶级作用域 能看到外面的变量
+		alert(test())
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>002helloworld</title>
+	<script type="text/javascript" charset="UTF-8">
+
+		var a = 3;//number 全局变量
+		//变量有2种，一种全局变量，一种局部变量
+		function test(){
+			var a = 2;//局部变量
+			c = 5;//全局变量
+			alert(a);
+		}
+		test();
+
+		//number类型 整数和小数（17位）
+		var a1 = 10;
+		var a2 = 10.5;
+		var a3 = NaN; //not a number
+		var a4 = 1/0; //正无穷
+		alert(a4);
+		var a5 = 070;//8进制
+		var a6 = 0xA//16进制
+		var a7 = 0.1;
+		var a8 = 0.2;
+		if(a6+a7==03){//不要做这样的判断
+			alert('dengyu 0.3');
+		}else{
+			alert('不等于 0.3');
+		}
+
+		var a8 = parseInt('abcdefg');//NaN
+		var a9 = parseInt('12abcde');//12自动判断12去掉abcde
+
+		//undefined 数据类型只有一个：undefined 表示变量声明了，没有被赋值
+		//Null 空值
+		//number ,boolean ,string,undefined ,null 数据基本类型
+		var flag = true;//boolean
+		var str = 'aaaaa';//String
+		//引用数据类型
+		var arr = {1,3,4,5,6};//数组
+		var dates = new Date();//对象
+		var obj = {};//一个空对象
+		//typeof 用来判断数据类型
+		var  w = 10;//number
+		var w1 = 10.3;//number
+		var w2 = true;//boolean
+		var w3 = 'abcd';//string
+		var w4 = new Date();//object
+		var w5 = [1,2,3];//object
+		var w6 = NaN;//number
+		var w7 = undefined;//undefined
+		var w8 = null;//object 表示空对象的引用
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

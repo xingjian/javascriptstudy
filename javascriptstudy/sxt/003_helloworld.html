@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var a =10;
+		var a2 = 10.0;
+		if(a==a2){
+			alert('a1==a2')
+		}
+		//js 数据自动转换的机制
+		var a =1;
+		var b = true;
+		if(a==b){
+			alert('a==b');
+		}
+		//== 表示可以经过自动转换 ，比较值
+		//=== 表示可以经过自动转换，先比较值，在比较数据类型
+		if(a===b){
+			alert('a===b');
+		}else{
+			alert('a!===b');
+		}
+		//三目运算
+		var c =10/2>4?5:3
+		//控制语句
+		for(var i=0;i<5;i++){
+			//alert(i);
+		}
+		//for(;;){
+			//alert();无限循环
+		//}
+		while(i<5){
+
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

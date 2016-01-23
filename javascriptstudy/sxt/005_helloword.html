@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//object 所有类基础类
+	//初始化
+	var obj = new Object();//或者 var obj = new Object;
+	var obj = {};
+	obj.name = 'zhangsan';
+	obj.age = 20;
+	obj['birthday'] = '00000';//对象的赋值方式
+	obj.say = function(){
+		alert('helloworld')
+	}
+	alert(obj.name);
+	obj.sex = 'nan';
+	//delete 只能删除对象的方法和属性
+	delete obj.age;
+	delete obj.say;
+	//遍历对象 for in (也可以遍历数组，因为数组也是对象)
+	for(var attr in obj){
+		alert(attr+":"+obj[attr]);//obj.attr是不行的
+	}
+	//每个对象都具有下列的方法
+	//Constructor 保存对象的创建函数
+	alert(obj.constructor);
+	//hasOwnProperty("age") 检查对象是否具有该属性
+	//isPrototypeOf(object) 检测原型
+	//propertyIsEnumerable('age') 检查给定的属性是否能用for in 循环枚举出来
+	//toString() valueof() toLocalString()
+	</script>
+</body>
+</html>

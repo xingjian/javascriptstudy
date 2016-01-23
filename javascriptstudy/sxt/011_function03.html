@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	// function 参数
+	//形参列表 实参可以和形参个数不一样
+	function test (a,b,c,d){
+		//函数的实际参数，内部就是用一个数组去接收函数的实际参数
+		alert(arguments。length);//使用arguments访问函数的实际参数
+		arguments[0];
+		arguments[1];
+		//arguments 只能在函数的里面使用
+		//arguments 对象用的最多的还是做递归操作
+		//arguments.callee 只的函数本身
+		if(test.length == arguments.length){
+			return a +b;
+		}else{
+			return '参数不正确';
+		}
+		
+	}
+	alert(test(10,20))//30
+	alert(test())//NaN
+	test.length;//获取函数形参的个数
+
+	function fact(num){
+		if(num<1){
+			return 1;
+		}else{
+			return num*fact(num-1);
+			return num*arguments.callee(num-1)
+		}
+	}
+
+	</script>
+</body>
+</html>

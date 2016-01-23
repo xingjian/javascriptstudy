@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var arr = [2,1,2,10,2,3,5,101,13];
+		//去掉数组中的重复项
+		//利用js对象特性，在js对象中key 是永远不会重复的
+		//1.把数组转成一个js的对象
+		//2.把数组中的值变成js对象的key
+		//3.把这个对象在还原成数组
+		var toObject = function(arr){
+			var obj = {};//私有的对象
+			var j;
+			for(var i = 0,j=arr.length;i<j;i++){
+				obj[arr[i]] = true;
+			}
+			return obj;
+		}
+		function keys(obj){//把对象转换成数组
+			var arr = [];
+			for(var attr in obj){
+				if(obj.hasOwnProperty(attr)){
+					arr.push(attr);
+				}
+			}
+			return arr;
+		}
+		//去掉数组中的重复项
+		function uniq(newarr){13694482421
+			return keys(toObject(newarr));
+		}
+	</script>
+</body>
+</html>

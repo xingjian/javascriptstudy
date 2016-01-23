@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//js的数组可以动态增加，大小可以改变，变量也可以不一样
+	 	//js中的数组类似java的Map对象，长度任意改变，元素类型任意
+	 	var arr1 = new Array(10);
+	 	var arr2 = [1,2,false,new Date()];
+	 	//alert(arr2.length);
+	 	arr2.length = 3;
+	 	//alert(arr2);1,2,false隐士调用toString()方法
+	 	//push pop  
+	 	//shift unshift
+		//splice slice
+		var result = arr2.push('99999',1,3);//可以推送多个值
+		//alert(result); 7 返回新数组元素个数
+		var obj = arr2.pop();//从数组的末尾移除一个元素
+		//
+		var arr3 = [1,2,3,true,new Date()];
+		arr3.shift();//从头部移除一个元素，返回移除元素的内容
+		arr3.unshift(10,false);//从头部插入2个元素，返回新数组的长度
+		//splice 第一个参数起始位置
+		//splice 第二个参数表示截取个数
+		//第三个参数以后，表示追加的新元素
+		var arr4 = [1,2,3,4,5];
+		//arr4.splice(1,2,3,4,5);//134545
+		//arr4.splice(1,2)//返回结果23
+		//alert(arr4);//145
+		//arr4.splice(1);
+		//alert(arr4);//1 从第一个位置开始截取，后面的都截掉了。
+		arr4.slice(2,4);//截取范围 左闭右开 返回125截取内容
+		// splice方法操作数组本身 slice不操作数组本身
+		//concat  join 操作数组的方法
+		var arr5 = [1,2,3];
+		var arr6 = [true,4,5];
+		var result = arr1.concat(arr6);//返回合并数组1,2,3,true,4,5
+		var result2 = arr.join('-');//用-连接每个元素 1-2-3
+		//
+		var arr7 = [5,2,1,3,4];
+		var arr8 = [10,2,4,1,7]
+		arr7.sort();
+		alert(arr7);//操作数组本身返回1，2，3，4，5
+		arr7.reverse();//倒序排序按照集合的位置排序的3，4，1，2，5
+		arr8.sort();
+		alert(arr8);//1,10,2,4,7 当成字符串比较排序
+
+		function compare(value1,value2){
+			if(value1<value2){
+				return -1
+			}else if(value1>value2){
+				return 1;
+			}else{
+				return 0;
+			}
+		}
+		arr8.sort(compare);
+		var arr9 = [1,2,3,4,5,6,7,8,9];
+		var index = arr9.indexof(4);//3 采用3个等号的比对
+		var index1 = arr9.index0f(4,4);//从第四个位置开始查找 采用3个等号的比对
+		var index2 = arr9.lastIndexof(2);//1  从后往前找
+		//5个新加迭代的方法
+		//every 对数组每一个元素进行一个函数的运行，如果都返回true,最后返回true
+		var result = arr9.every(function(item,index,array){
+			return item>2;
+		}); //返回false
+		//filter 对于数组的每一个元素进行一个函数运行 给定的函数去执行，把过滤后的结果返回
+		var result = arr.filter(function(item,index,array) {
+			return item>2;
+		});//把大于二的元素都返回来
+
+		//foreach 循环数组每一项的值，并可以执行一个方法
+		arr.foreach(function(item,index,array){
+
+		});
+		//map 对于数组的每一个元素进行一个函数运行，并返回结果
+		var result = arr.map(function(item,index, array) {
+			return item*2;
+		});//和python map 一样
+		//some 对于数组的每一个元素进行一个函数运行，如果有一项返回true，就返回true
+		var result = arr.some(function(item,index,array){
+			return item>10;
+		});
+		//reduce 前一个值，当前值，当前索引位置，数组本身
+		var result = arr.reduce(function(prev,cur,index,array){
+			return prev + cur
+		});//和python 一样，元素俩俩做运算
+		//reduceRight 和reduce一样，只不过是遍历的时候是从右侧开始
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

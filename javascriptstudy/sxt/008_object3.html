@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//全局对象
+	//encodeURI encodeURIComponent
+	var uri = 'http://www.bjsxt.com cn';
+	var str1 = encodeURI(uri);//将部分不标准的编码
+	var str2 = encodeURIComponent(uri);//常用的
+	alert(str1);//http://www.bjsxt.com%20cn
+	alert(str2);//http%3A%2F%2Fwww.bjsxt.com%20cn
+	//decodeURI decodeURIComponent 解码
+	//eval(string) 方法无形的javascript解析器
+	var str1 = "var a=10;var b=20";
+	eval(str1);
+	alert(a+b);//30
+	//数组字符串直接使用：eval(stringarr)
+	//{name:z3,age:20}
+	var strobj = "{name:'z3',age：20}";
+	var obj = eval('('+strobj+')');
+	alert(obj.name);//z3
+	//parseInt parseFloat 转换number类型
+ 	var num1 = parseInt('20');//20
+ 	alert(typeof num1);//number
+ 	//escape unescape URI转码 针对中文
+ 	var str3 = '尚学堂';
+ 	var str4 = escape(str3);
+ 	alert(str4);
+ 	var str5 = unescape(str4);
+ 	//isNaN 如果不是number true 是number类型的话 false
+ 	var num3 = 10;
+ 	var num4 = 'abcd10e';
+ 	alert(isNaN(num3));//false
+ 	alert(num4);//true
+ 	//在js里面只有NaN自己不等于自己本身
+ 	Math.random();//产生[0,1)
+	//Date
+	var date = new Date();
+	var year = data.getFullYear();
+	var month = date.getMonth()+1;
+	var dayday = data.getDate();
+	var hour = date.getHours();
+	var min = date.getMinutes();
+	var sec = date.getSeconds();
+	var d = date.getDay();//星期几
+	document.write('今天是'+year+'年'+month+'月');
+	document.write(date.getTime());//获取毫秒数
+	
+	</script>
+</body>
+</html>

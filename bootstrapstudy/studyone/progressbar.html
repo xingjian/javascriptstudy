@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>progressbar</title>
+	<link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+	<script src="../js/jquery/jquery-1.11.3.min.js"></script>
+	<script src="../js/bootstrap/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.div1{
+			width: 300px;
+			height: 320px;
+			display:block;
+			float:left;
+			background-color:#000000;
+			border-top: 4px;
+			opacity: 1;
+			border-left:2px solid #2C7A7C;
+			border-right:2px solid #2C7A7C;
+			border-top:5px solid #2C7A7C;
+			border-bottom:2px solid #2C7A7C
+		}
+		.div2{
+			background-color: #141414;
+			border-color: #396357;
+			border: 1px;
+		}
+		.label1{
+			font-family: 微软雅黑;
+			font-size: 12px;
+			color: #6B6D6C
+		}
+		.label2{
+			position:absolute; 
+			right:0px; 
+			bottom:0px;
+		}
+		.label3{
+			position:absolute;
+			width: 207px;
+			left:0px; 
+			top:1px;
+			font-size: 12px;
+			color: #B9B9B9;
+			text-align: right;
+		}
+		.label4{
+			position:absolute;
+			width: 207px;
+			left:0px; 
+			bottom:-5px;
+			font-size: 12px;
+			color: #FF9933;
+			text-align: right;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="container-fluid" style="position:absolute;width:100%;height:100%;background-image:url(../images/map-bg.png)" >
+		<div class="row" style="margin-top: 100px;margin-left: 100px">
+			<div class="col-lg-4">
+					<div class="div1">
+						<div style="width: 100%;height:25px;background-color: #1b1b1b">
+							<div style="padding-top:5px;height:10px;width: 100%">
+								<img src="../images/gray.png" height="10" width="100%" />
+							</div>
+							<div style="position:absolute;left:40px;top:6px; width: 80px;height:20px;bottom: 2px;background-color: #000">
+								<label style="text-align: center;width: 100%;color:#FF9933">排放总量</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<div style="padding-top: 25px;padding-left: 6px;padding-bottom: 3px;padding-right: 5px">
+									<div class="row" >
+										<div class="col-lg-2" style="height:49px;width:63px;">
+											<div style="height:49px;width:63px;background-image:url(../images/bg-yellow.png)">
+												<label class="label1">33%</label>
+												<label class="label2">NOx</label>
+											</div>
+										</div>
+										<div class="col-lg-10" style="height:49px;width:248px;padding-left: 22px">
+											<div style="padding-left: 2px;width:100%;height:49px;background-color:#141414;border: 1px solid rgba(55,98,89,0.4)">
+												<div style="padding: 1px">
+													<label class="label3">900/3000</label>
+													<div style="margin-top: 15px;background-color: #1B4F4D;height:14px;width:203px">
+														<div style="width:203px;height:14px;background-image:url('../images/progress-bg1.png');"></div>
+														<div style="width:197px;height:8px;margin-left:3px;margin-top:-11px;">
+															<img id="img" src="../images/progress-bg2.png" style="position:absolute;clip:rect(0px,100px,8px,0px);"/>
+														</div>
+													</div>
+													<label class="label4">33%</label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<div style="padding-top: 15px;padding-left: 6px;padding-bottom: 3px;padding-right: 5px">
+									<div class="row" >
+										<div class="col-lg-2" style="height:49px;width:63px;">
+											<div style="height:49px;width:63px;background-image:url(../images/bg-yellow.png)">
+												<label class="label1">33%</label>
+												<label class="label2">NOx</label>
+											</div>
+										</div>
+										<div class="col-lg-10" style="height:49px;width:248px;padding-left: 22px">
+											<div style="padding-left: 2px;width:100%;height:49px;background-color:#141414;border: 1px solid rgba(55,98,89,0.4)">
+												<div style="padding: 1px">
+													<label class="label3">900/3000</label>
+													<div style="margin-top: 15px;background-color: #1B4F4D;height:14px;width:203px">
+														<div style="width:203px;height:14px;background-image:url('../images/progress-bg1.png');"></div>
+														<div style="width:197px;height:8px;margin-left:3px;margin-top:-11px;">
+															<img id="img" src="../images/progress-bg2.png" style="position:absolute;clip:rect(0px,100px,8px,0px);"/>
+														</div>
+													</div>
+													<label class="label4">33%</label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<div style="padding-top: 15px;padding-left: 6px;padding-bottom: 3px;padding-right: 5px">
+									<div class="row" >
+										<div class="col-lg-2" style="height:49px;width:63px;">
+											<div style="height:49px;width:63px;background-image:url(../images/bg-yellow.png)">
+												<label class="label1">33%</label>
+												<label class="label2">NOx</label>
+											</div>
+										</div>
+										<div class="col-lg-10" style="height:49px;width:248px;padding-left: 22px">
+											<div style="padding-left: 2px;width:100%;height:49px;background-color:#141414;border: 1px solid rgba(55,98,89,0.4)">
+												<div style="padding: 1px">
+													<label class="label3">900/3000</label>
+													<div style="margin-top: 15px;background-color: #1B4F4D;height:14px;width:203px">
+														<div style="width:203px;height:14px;background-image:url('../images/progress-bg1.png');"></div>
+														<div style="width:197px;height:8px;margin-left:3px;margin-top:-11px;">
+															<img id="img" src="../images/progress-bg2.png" style="position:absolute;clip:rect(0px,100px,8px,0px);"/>
+														</div>
+													</div>
+													<label class="label4">33%</label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<div style="padding-top: 15px;padding-left: 6px;padding-bottom: 3px;padding-right: 5px">
+									<div class="row" >
+										<div class="col-lg-2" style="height:49px;width:63px;">
+											<div style="height:49px;width:63px;background-image:url(../images/bg-yellow.png)">
+												<label class="label1">33%</label>
+												<label class="label2">NOx</label>
+											</div>
+										</div>
+										<div class="col-lg-10" style="height:49px;width:248px;padding-left: 22px">
+											<div style="padding-left: 2px;width:100%;height:49px;background-color:#141414;border: 1px solid rgba(55,98,89,0.4)">
+												<div style="padding: 1px">
+													<label class="label3">900/3000</label>
+													<div style="margin-top: 15px;background-color: #1B4F4D;height:14px;width:203px">
+														<div style="width:203px;height:14px;background-image:url('../images/progress-bg1.png');"></div>
+														<div style="width:197px;height:8px;margin-left:3px;margin-top:-11px;">
+															<img id="img" src="../images/progress-bg2.png" style="position:absolute;clip:rect(0px,100px,8px,0px);"/>
+														</div>
+													</div>
+													<label class="label4">33%</label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+    </div>
+</body>
+</html>

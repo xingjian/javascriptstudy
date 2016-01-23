@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+	<script type="text/javascript" src="../../../../js/d3.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		var dataSet = [1,2,3,4,5];
+		d3.select('body').append('p').text('new paragraph');
+		d3.csv("csvdata.csv",function(error,data){
+			if(error){
+				console.log(error);
+			}else{
+				console.log(data);	
+			}
+			
+		});
+		d3.select('body').selectAll('p').data(dataSet).enter().append('p').text('123456');
+	</script>
+</body>
+</html>
